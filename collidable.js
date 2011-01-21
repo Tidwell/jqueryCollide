@@ -19,7 +19,9 @@
         $.extend( defaults, options );
       }
 
-     
+     //for storing and lookup, use
+     //http://en.wikipedia.org/wiki/R-tree
+     //https://github.com/imbcmdth/RTree
 
     });
 
