@@ -1,0 +1,36 @@
+﻿What do I want to do?
+
+$('#character').collidable(function(elementCollidedWith/this) {
+  //run this whenever character collides with another dom element
+});
+
+$('#character').collidable({
+  elements: $('.monster'),
+  collide: function(elementCollidedWith=this) {
+    //run this whenever character collides with a monster
+  },
+  frequency: 3000 //int ms - the time between collision checks
+});
+
+$('#character').collidable([
+  {
+    elements: '.monster', //note string = selector
+    collide: function(elementCollidedWith=this) {
+      //run this whenever character collides with a monster
+    }
+  },
+  {
+    elements: $('.monster2'),
+    collide: someNamedFunction, //run this whenever character collides with a monster2
+    frequency: '3000' //string = in ms
+    triggerEventType: 'string'  //event to listen for to trigger a detection - overrides frequency
+  }
+]);
+
+
+<div>
+  <div id="character"></div>
+  <div class="monster"></div>
+  <div class="monster"></div>
+  <div class="monster"></div>
+</div>
